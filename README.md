@@ -61,7 +61,7 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 6.Generate RTL realization and timing diagrams.
 
 
-### PROGRAM 
+### PROGRAM "
 ```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: P.Ramsai
@@ -81,7 +81,7 @@ and(R,S0,S1C,I2);
 and(S,S0,S1,I3);
 or(Y,P,Q,R,S);
 endmodule
-
+```
 ## RTL LOGIC:
 
 ![Screenshot (208)](https://user-images.githubusercontent.com/94269989/199964313-f198fccc-9f3d-4850-a5ae-503aad21a741.png)
