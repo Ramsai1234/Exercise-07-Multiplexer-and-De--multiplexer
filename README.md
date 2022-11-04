@@ -62,37 +62,75 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: P.Ramsai
 RegisterNumber:  212221240041
-*/
 
 
+module MUX(I0,I1,I2,I3,S0,S1,Y);
+input I0,I1,I2,I3,S0,S1;
+output Y;
+wire S0C,S1C;
+not(S0C,S0);
+not(S1C,S1);
+wire P,Q,R,S;
+and(P,S0C,S1C,I0);
+and(Q,S0C,S1,I1);
+and(R,S0,S1C,I2);
+and(S,S0,S1,I3);
+or(Y,P,Q,R,S);
+endmodule
 
+## RTL LOGIC:
 
-
-
-### RTL LOGIC  
-
-
-
-
-
-
+![Screenshot (208)](https://user-images.githubusercontent.com/94269989/199964313-f198fccc-9f3d-4850-a5ae-503aad21a741.png)
 
 
 ### TIMING DIGRAMS  
 
+
+![Screenshot (209)](https://user-images.githubusercontent.com/94269989/199964548-55e58543-8daf-443c-8251-16bc684035b3.png)
 
 
 
 
 ### TRUTH TABLE 
 
+![Screenshot (210)](https://user-images.githubusercontent.com/94269989/199964797-35f10f26-8ea4-40be-917c-706cf44b0c52.png)
 
 
 
+
+## PROGRAM:
+```
+Program for flipflops  and verify its truth table in quartus using Verilog programming.
+Developed by: P.Ramsai
+RegisterNumber:  212221230041
+
+module dm(s1,s2,i1,i2,i3,i4,y);
+input s1,s2,i1,i2,i3,i4;
+output y;
+wire a,b,c,d,e,f;
+assign e=~s1;
+assign f=~s2;
+assign a=i1&e&f;
+assign b=i2&e&s2;
+assign c=i3&s1&f;
+assign d=i4&s1&s2;
+assign y=a|b|c|d;
+endmodule
+```
+## RTL Logic:
+
+![Screenshot (203)](https://user-images.githubusercontent.com/94269989/199962374-d0b27032-ad38-4fc4-8f95-0f8e356a3eb6.png)
+
+## TIMING DIGRAMS :
+
+![Screenshot (204)](https://user-images.githubusercontent.com/94269989/199962670-07463939-4641-4b48-b06b-65ffd06b06a9.png)
+## TRUTH TABLE:
+![Screenshot (205)](https://user-images.githubusercontent.com/94269989/199962977-c174d647-a0d5-4cf3-ac45-92a5dc29869f.png)
 
 
 ### RESULTS 
+Thus the program to design a 4x1 multiplexer and 1x4 demultiplexer is done successful.
