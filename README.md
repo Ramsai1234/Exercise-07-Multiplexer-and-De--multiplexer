@@ -108,22 +108,22 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: P.Ramsai
 RegisterNumber:  212221230041
 
-module dm(s1,s2,i1,i2,i3,i4,y);
-input s1,s2,i1,i2,i3,i4;
-output y;
-wire a,b,c,d,e,f;
-assign e=~s1;
-assign f=~s2;
-assign a=i1&e&f;
-assign b=i2&e&s2;
-assign c=i3&s1&f;
-assign d=i4&s1&s2;
-assign y=a|b|c|d;
+module DEMUX(Y0,Y1,Y2,Y3,S0,S1,I);
+input S0,S1,I;
+output Y0,Y1,Y2,Y3;
+wire S0C,S1C;
+not(S0C,S0);
+not(S1C,S1);
+and(Y0,I,S0C,S1C);
+and(Y1,I,S0C,S1);
+and(Y2,I,S0,S1C);
+and(Y3,I,S0,S1);
 endmodule
 ```
 ## RTL Logic:
+![Screenshot (211)](https://user-images.githubusercontent.com/94269989/199966116-3ef1a73d-d529-40e0-97f7-157f2beb7a2c.png)
 
-![Screenshot (203)](https://user-images.githubusercontent.com/94269989/199962374-d0b27032-ad38-4fc4-8f95-0f8e356a3eb6.png)
+
 
 ## TIMING DIGRAMS :
 
